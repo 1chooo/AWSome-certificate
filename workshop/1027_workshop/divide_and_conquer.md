@@ -17,7 +17,7 @@
    - [ ] 告訴活動、行銷的人技術細節
    - [ ] 雲端就業 and 證照
 2. 準備幾個技術是可以在工作坊的，或是一些會用到雲端服務的小技術
-   1. 用 lambda 串 linebot 做個人名片 [[^1]], [[^2]].
+   1. 用 lambda 串 linebot 做個人名片 [^1], [^2].
 
 [^1]: https://www.ecloudture.com/deploy-line-chatbot-using-aws-lambda-1/
 [^2]: https://www.ecloudture.com/deploy-line-chatbot-using-aws-lambda-2/
