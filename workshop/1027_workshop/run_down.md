@@ -27,3 +27,22 @@
 
 ## Lex Part
 
+1. 在上方欄位輸入搜尋 Lex
+2. 進到畫面後點選 Create bot，選擇 create a blank bot 名稱輸入 jeopardy_2023_1027_workshop，描述是註記給自己看的，因此大家可以填寫幫助自己記憶的內容，如果不太清楚要怎麼填寫可以填上，workshop demo on 2023/10/27，I am role 選擇 Create a role with basic Amazon Lex permissions. Children's Online Privacy Protection Act (COPPA) 選擇 No 因為我們並未涉及孩童相關的內容，填寫完以上後點擊 Next 。
+3. 我們的語言選擇 English，Voice interaction 大家可以根據自己的喜好做選擇，有非常多種可以做嘗試，Intent classification confidence score threshold 保持 0.4
+4. 接著我們下滑找到 Intent details 並且取名為 play_new_round，描述填寫 start the new round。
+5. 我們到 Sample utterances ，我們新增三個描述 Let's play the Jeopardy!, Start a Jeopardy., Have fun with Jeopardy.
+6. 再來我們要設定機器人的起始回應，我們往下找到 Initial response，輸入 Okay, let's have fun! 最後我們點擊 save 儲存。
+7. 我們已經完成機器人的初始化了！接著我們要繼續新增 intent 以讓我們的對話更為豐富，，因此我們點擊側邊的 intent，我們再新增 intent ，因此要點擊 add intent ，並且命名為 check_score
+8. 接著我們會進入到 check_score intent 的畫面，這是為了讓我們查詢遊戲的分數
+9. 我們要到 Sample utterances 輸入 grade, my score, check score
+10. 同樣我們要設定機器人的起始回應，我們往下找到 Initial response，輸入 checking score is not available
+11. 最後我們點擊 save intent。
+12. 這時候我們點擊 build 來測試我們剛剛設計的機器人對話是否成功吧！這時候上方繪有藍條的進度條
+13. 當顯示成功 build 的進度條後我們就可以點擊 Test 來測試我們的 Bot
+14. 我們可以測試剛剛設定的對話機器人是否有回應我們希望的內容，因此我們可以在側邊的聊天框輸入剛剛設定好的 Let's play the Jeopardy!, Start a Jeopardy., Have fun with Jeopardy, grade, my score, check score 看看是否出現 Okay, let's have fun!, checking score is not available ，另外我們也可以測試剛剛沒有設定的對話機器人會怎麼回覆
+15. 若是我們沒有設定的對話會出現 Intent FallbackIntent is fulfilled ，這是 Lex 的預設回應，如果再傳送他不認識的訊息，則會這樣回覆我們。
+16. 那接下來我們要繼續設定我們的機器人
+
+
+
