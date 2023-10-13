@@ -3,7 +3,7 @@
 ## Overview
 
 ## Lambda Part
-1. 我們先登錄進 AWS Console 並且在上方欄位輸入搜尋 lambda
+1. 我們先登錄進 AWS Console 並且在上方欄位輸入搜尋 lambda [x] 
 2. 進入 lambda 頁面後我們點擊按鈕以建立「lambda 函式」
 3. 選擇「從頭開始撰寫」，輸入 function name 並且 runtime 選擇 python3.9，架構選擇 x86_64
 4. 進入我們剛剛創立的 lambda 函數
@@ -42,7 +42,15 @@
 13. 當顯示成功 build 的進度條後我們就可以點擊 Test 來測試我們的 Bot
 14. 我們可以測試剛剛設定的對話機器人是否有回應我們希望的內容，因此我們可以在側邊的聊天框輸入剛剛設定好的 Let's play the Jeopardy!, Start a Jeopardy., Have fun with Jeopardy, grade, my score, check score 看看是否出現 Okay, let's have fun!, checking score is not available ，另外我們也可以測試剛剛沒有設定的對話機器人會怎麼回覆
 15. 若是我們沒有設定的對話會出現 Intent FallbackIntent is fulfilled ，這是 Lex 的預設回應，如果再傳送他不認識的訊息，則會這樣回覆我們。
-16. 那接下來我們要繼續設定我們的機器人
+16. 接下來我們會需要新增 slot 位置類型，點選 Add slot type 我們要選擇空白的 (add blank slot type)，並且命名為 Category。
+17. 下一步我們需要把 Slot value resolution 設定為 Restrict to slot values，接著找到 Slot type values ，位置類型值我們需要新增三個項目，透過 add value 的方法新增三個種類，最後我們點擊儲存。
+18. 在我們設定好 slot type 後，接下來我們要繼續設定我們的機器人，我們先回到一開始設定的 intent: play_new_round 我們現在要新增 slot。
+19. 點擊 add a slot 後，我們需要輸入「名稱、類型以及提示」分別是 CategoryName, Category, Choose you question type，最後點擊儲存。
+20. 接著我們往下滑找到 confirmation，我們要在 Confirmation prompt 填入 make sure your question type：{CategoryName} Decline response 填入 cancel question type：{CategoryName}
+21. 接著我們需要找到 fulfillment 的 On successful fulfillment 填入 ok,preparing {CategoryName} question。最後我們點擊儲存 intent。
+22. 現在我們已經設定好機器人的回覆機制了，我們現在要幫一開始設立的 lambda 遊戲邏輯加入我們的機器人，我們同樣停留在 play_new_round，我們往下尋找 add a fulfillment ，找到 advanced option，把 Use a Lambda function for fulfillment 的選項勾選，因為我們要加入我們剛剛設定好的 lambda function，點選 update options，以及 save intent。
+23. 最後我們點選 build 來建立我們的機器人，如果成功後我們點擊 Test，我們進到對話框，點選右上角的 setting 按鈕，將 lambda function 的 source 調整成我們剛設立好的 lambda function ，並且點擊 save。
+24. 最後我們就可以在對話框看到我們剛剛設定的結果啦！
 
 
 
