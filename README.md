@@ -1,4 +1,4 @@
-# AWS Educate Ambassador
+# AWSome AWS SAA Notes
 
 ## License
 Released under [MIT](./LICENSE) by [Hugo ChunHo Lin](https://github.com/1chooo).
