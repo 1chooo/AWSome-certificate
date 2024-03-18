@@ -1,5 +1,10 @@
 # AWSome AWS SAA Notes
 
+## Resources
+
+[Amazon AWS Certified Solutions Architect - Associate SAA-C02 Exam](https://www.examtopics.com/exams/amazon/aws-certified-solutions-architect-associate-saa-c02/)
+- [AWS CSAA Practice Exams](https://quizlet.com/606217860/aws-csaa-practice-exams-flash-cards/)
+
 ## License
 Released under [MIT](./LICENSE) by [Hugo ChunHo Lin](https://github.com/1chooo).
 
