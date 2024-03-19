@@ -142,4 +142,79 @@ What should a solutions architect recommend?
 
 ---
 
+A company collects temperature, humidity, and atmospheric pressure data in cities across multiple continents. The average volume of data collected per site each day is 500 GB. Each site has a high-speed internet connection. The company's weather forecasting applications are based in a single Region and analyze the data daily.
+
+What is the FASTEST way to aggregate data from all of these global sites?
+
+##### Keywords: `High-speed internet connection`, `FASTEST`, `edge location`
+
+- [x] Enable Amazon S3 Transfer Acceleration on the destination bucket. Use multipart uploads to directly upload site data to the destination bucket.
+- [ ] Upload site data to an Amazon S3 bucket in the closest AWS Region. Use S3 cross-Region replication to copy objects to the destination bucket.
+- [ ] Schedule AWS Snowball jobs daily to transfer data to the closest AWS Region. Use S3 cross-Region replication to copy objects to the destination bucket.
+- [ ] Upload the data to an Amazon EC2 instance in the closest Region. Store the data in an Amazon Elastic Block Store (Amazon EBS) volume. Once a day take an EBS snapshot and copy it to the centralized Region. Restore the EBS volume in the centralized Region and run an analysis on the data daily.
+
+> [!TIP]
+> The question asks for the **FASTEST** way to aggregate data from all of these global sites. -> Transfer Acceleration
+>
+> - Transfer Acceleration will first get the data into the nearest AWS data center OR nearest Edge Locations.
+
+
+
+
+
+> [!NOTE]
+> Upload site data to an Amazon S3 bucket in the closest AWS Region and use S3 cross-Region replication to copy objects to the destination bucket. -> doesn't use edge location as the first destination. 
+> 
+> ### Why use Transfer Acceleration?
+> 
+> You might want to use Transfer Acceleration on a bucket for various reasons:
+> 
+> - Your customers upload to a **centralized bucket** from all over the world.
+> - You transfer **gigabytes to terabytes** of data on a regular basis across continents.
+> - You can't use **all of your available bandwidth** over the internet when uploading to Amazon S3.
+> 
+> [Configuring fast, secure file transfers using Amazon S3 Transfer Acceleration](https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html)
+
+
+
+
+---
+
+## NO ANSWER YET
+
+A popular social media website uses a CloudFront web distribution to serve their static contents to their millions of users around the globe. They are receiving a number of complaints recently that their users take a lot of time to log into their website. There are also occasions when their users are getting HTTP 504 errors. You are instructed by your manager to significantly reduce the user's login time to further optimize the system. 
+
+Which of the following options should you use together to set up a cost-effective solution that can improve your application's performance? (Select TWO.) 
+
+- [ ] Configure your origin to add a Cache-Control max-age directive to your objects, and specify the longest practical value for max-age to increase the cache hit ratio of your CloudFront distribution. 
+- [ ] Use multiple and geographically disperse VPCs to various AWS regions then create a transit VPC to connect all of your resources. In order to handle the requests faster, set up Lambda functions in each region using the AWS Serverless Application Model (SAM) service. 
+- [ ] Customize the content that the CloudFront web distribution delivers to your users using Lambda@Edge, which allows your Lambda functions to execute the authentication process in AWS locations closer to the users. 
+- [ ] Set up an origin failover by creating an origin group with two origins. Specify one as the primary origin and the other as the second origin which CloudFront automatically switches to when the primary origin returns specific HTTP status code failure responses.
+- [ ] Deploy your application to multiple AWS regions to accommodate your users around the world. Set up a Route 53 record with latency routing policy to route incoming traffic to the region that provides the best latency to the user.
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
